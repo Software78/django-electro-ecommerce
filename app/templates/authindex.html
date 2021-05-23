@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <div>
+        <h3>Hello {{request.user}}</h3>
+        <a href="{% url 'logout' %}">Logout</a>
+        <a href="{% url 'create' %}">Post News</a>
+        <a href="{% url 'index' %}">return</a>
+        <hr>
+    </div>
+    <div>
+        <div id="published">
+            <h2>Published</h2>
+            {% for item in auth_news_list %}
+            {% if item.published == True %}
+            <h4>
+                {{item.headlines}}
+                <a href="{% url 'authnews' item.id %}">View</a>
+                <a href="{% url 'update' item.id %}">Edit</a>
+                <a href="{% url 'delete' item.id %}">Delete</a>
+            </h4>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div id="draft">
+            <h2>draft</h2>
+            {% for item in auth_news_list %}
+            {% if item.published == False %}
+            <h4>
+                {{item.headlines}}
+                <a href="{% url 'authnews' item.id %}">View</a>
+                <a href="{% url 'update' item.id %}">Edit</a>
+                <a href="{% url 'delete' item.id %}">Delete</a>
+            </h4>
+            {% endif %}
+            {% endfor %}
+        </div>
+
+{% endblock content %}

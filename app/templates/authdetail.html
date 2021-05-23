@@ -1,0 +1,14 @@
+{% extends 'main.html' %}
+
+{% block content %}
+{% if user.is_authenticated == True %}
+    <h3>Hello {{request.user}}</h3>
+    <h3>{{authdetail}}
+        <p>{{authdetail.news}}</p>
+    </h3>
+    <a href="{% url 'authindex' %}">Return</a>
+{% elif user.is_authenticated == False %}
+<h3>Please Login</h3>
+{% endif %}
+
+{% endblock content %}

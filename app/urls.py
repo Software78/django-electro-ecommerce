@@ -7,4 +7,5 @@ urlpatterns = [
     path('checkout/',checkout,name='checkout'),
     path('product/',product,name='product'),
     path('blank/',blank,name='blank'),
+    path('phones',phones,name='phones'),
 ]

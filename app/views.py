@@ -18,6 +18,14 @@ def blank(request):
     return render(request,'blank.html')
 
 def phones(request):
-    product = Phones.objects.all()
-    context = {'product':product}
+    phones = Phones.objects.all()
+    laptop = Laptop.objects.all()
+    context = {'phones':phones,'laptop':laptop}
     return render(request,'phones.html',context)
+
+def accessories(request):
+    batteries = Batteries.objects.all()
+    headphones = Headphones.objects.all()
+    chargers = Chargers.objects.all()
+    context ={'headphones':headphones,'chargers':chargers,'batteries':batteries}
+    return render(request,'accessories.html',context)

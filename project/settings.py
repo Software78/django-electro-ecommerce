@@ -1,6 +1,5 @@
 import os
 
-
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = 'wk12k_)3na=9))m_ue!_q881==h0=&k9^v*5n*gqlnyxb^bkef'
@@ -18,6 +17,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
+    'herokuapp',
 ]
 
 MIDDLEWARE = [
@@ -96,3 +96,5 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/images/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'static/images/')
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')

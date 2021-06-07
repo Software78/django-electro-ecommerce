@@ -1,6 +1,6 @@
 {% extends 'main.html' %}
 
-{% block content %}
+{% block content %} 
 
 {% load static %}
 
@@ -14,8 +14,8 @@
 					<ul class="main-nav nav navbar-nav">
 						<li><a href="{% url 'index' %}">Home</a></li>
 						<li><a href="{% url 'phones' %}">Phones/Laptops</a></li>
-						<li class="active"><a href="{% url 'accessories' %}">Accessories</a></li>
-						<li><a href="{% url 'fashion' %}">Fashion</a></li>
+						<li ><a href="{% url 'accessories' %}">Accessories</a></li>
+						<li class="active"><a href="{% url 'fashion' %}">Fashion</a></li>
 						<li><a href="#">Cameras</a></li>
 
 					</ul>
@@ -30,7 +30,7 @@
         <!-- section title -->
 					<div class="col-md-12">
 						<div class="section-title">
-							<h3 class="title">Headphones</h3>
+							<h3 class="title">Shoes</h3>
 							<div class="section-nav">
                             <ul class="section-tab-nav tab-nav">
 									<li class="active"><a data-toggle="tab" href="#tab1">View More</a></li>
@@ -47,7 +47,7 @@
 								<!-- tab -->
 								<div id="tab1" class="tab-pane active">
 									<div class="products-slick" data-nav="#slick-nav-1">
-										{% for item in headphones %}
+										{% for item in shoes %}
                                         <!-- product -->
 										<div class="product">
 											<div class="product-img">
@@ -81,7 +81,7 @@
 													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
 													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
 													<button class="quick-view">
-                                                    <a href="{% url 'headphonedetail' item.id %}">
+                                                    <a href="{% url 'shoesdetail' item.id %}">
                                                     <i class="fa fa-eye"></i><span class="tooltipp">quick view</span></a></button>
 												</div>
 											</div>
@@ -105,7 +105,7 @@
         <!-- section title -->
 					<div class="col-md-12">
 						<div class="section-title">
-							<h3 class="title">Laptop Chargers</h3>
+							<h3 class="title">Shirts</h3>
 							<div class="section-nav">
                             <ul class="section-tab-nav tab-nav">
 									<li class="active"><a data-toggle="tab" href="#tab1">View More</a></li>
@@ -122,7 +122,7 @@
 								<!-- tab -->
 								<div id="tab1" class="tab-pane active">
 									<div class="products-slick" data-nav="#slick-nav-1">
-										{% for item in chargers %}
+										{% for item in shirts %}
                                         <!-- product -->
 										<div class="product">
 											<div class="product-img">
@@ -156,7 +156,7 @@
 													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
 													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
 													<button class="quick-view">
-                                                    <a href="{% url 'chargerdetail' item.id %}">
+                                                    <a href="{% url 'shirtdetail' item.id %}">
                                                     <i class="fa fa-eye"></i><span class="tooltipp">quick view</span></a></button>
 												</div>
 											</div>
@@ -178,7 +178,7 @@
         <!-- section title -->
 					<div class="col-md-12">
 						<div class="section-title">
-							<h3 class="title">Batteries</h3>
+							<h3 class="title">Trousers</h3>
 							<div class="section-nav">
                             <ul class="section-tab-nav tab-nav">
 									<li class="active"><a data-toggle="tab" href="#tab1">View More</a></li>
@@ -195,7 +195,7 @@
 								<!-- tab -->
 								<div id="tab1" class="tab-pane active">
 									<div class="products-slick" data-nav="#slick-nav-1">
-										{% for item in batteries %}
+										{% for item in trousers %}
                                         <!-- product -->
 										<div class="product">
 											<div class="product-img">
@@ -229,7 +229,7 @@
 													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
 													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
 													<button class="quick-view">
-                                                    <a href="{% url 'batterydetail' item.id %}">
+                                                    <a href="{% url 'trouserdetail' item.id %}">
                                                     <i class="fa fa-eye"></i><span class="tooltipp">quick view</span></a></button>
 												</div>
 											</div>
@@ -305,4 +305,5 @@
 		</div>
 		<!-- /SECTION -->
 
-{% endblock content %}
+
+{% endblock content %}   

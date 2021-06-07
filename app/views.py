@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from .models import *
+from django.views.generic.detail import DetailView
+
 
 def index(request):
     context = {}
@@ -18,14 +20,12 @@ def blank(request):
     return render(request,'blank.html')
 
 def phones(request):
-    phones = Phones.objects.all()
-    laptop = Laptop.objects.all()
-    context = {'phones':phones,'laptop':laptop}
+    phones = Items.objects.filter(category__in = '1')
+    laptops = Items.objects.filter(category__in = '2')
+    context = {'phones':phones,'laptops':laptops}
     return render(request,'phones.html',context)
 
-def accessories(request):
-    batteries = Batteries.objects.all()
-    headphones = Headphones.objects.all()
-    chargers = Chargers.objects.all()
-    context ={'headphones':headphones,'chargers':chargers,'batteries':batteries}
-    return render(request,'accessories.html',context)
+class ProductDetail(DetailView):
+    model = Items
+    context_object_name = product
+    template_name = 'product.html'

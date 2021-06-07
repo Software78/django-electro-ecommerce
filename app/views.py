@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import *
 from django.views.generic.detail import DetailView
+from django.views.generic.list import ListView
 
 
 def index(request):
@@ -27,5 +28,5 @@ def phones(request):
 
 class ProductDetail(DetailView):
     model = Items
-    context_object_name = product
+    context_object_name = 'product'
     template_name = 'product.html'

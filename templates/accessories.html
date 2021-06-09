@@ -15,7 +15,7 @@
 						<li><a href="{% url 'index' %}">Home</a></li>
 						<li><a href="{% url 'phones' %}">Phones/Laptops</a></li>
 						<li class="active"><a href="{% url 'accessories' %}">Accessories</a></li>
-						<li><a href="{% url 'fashion' %}">Fashion</a></li>
+						<li><a href="#">Fashion</a></li>
 						<li><a href="#">Cameras</a></li>
 
 					</ul>
@@ -69,7 +69,12 @@
 											<div class="product-body">
 												<p class="product-category">Category</p>
 												<h3 class="product-name"><a href="#">{{item.name}}</a></h3>
-												<h4 class="product-price">${{item.price|floatformat:2}} <br><del class="product-old-price">${{item.original_price|floatformat:2}}</del></h4>
+												<h4 class="product-price">${{item.price|floatformat:2}} <br>
+												{% if item.original_price == None %}
+												{% else %}
+												<del class="product-old-price">${{item.original_price|floatformat:2}}</del></h4>
+												{% endif %}
+												
 												<div class="product-rating">
 													<i class="fa fa-star"></i>
 													<i class="fa fa-star"></i>
@@ -81,7 +86,7 @@
 													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
 													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
 													<button class="quick-view">
-                                                    <a href="{% url 'headphonedetail' item.id %}">
+                                                    <a href="{% url 'detail' item.id %}">
                                                     <i class="fa fa-eye"></i><span class="tooltipp">quick view</span></a></button>
 												</div>
 											</div>
@@ -144,7 +149,11 @@
 											<div class="product-body">
 												<p class="product-category">Category</p>
 												<h3 class="product-name"><a href="#">{{item.name}}</a></h3>
-												<h4 class="product-price">${{item.price|floatformat:2}} <br><del class="product-old-price">${{item.original_price|floatformat:2}}</del></h4>
+												<h4 class="product-price">${{item.price|floatformat:2}} <br>
+												{% if item.original_price == None %}
+												{% else %}
+												<del class="product-old-price">${{item.original_price|floatformat:2}}</del></h4>
+												{% endif %}
 												<div class="product-rating">
 													<i class="fa fa-star"></i>
 													<i class="fa fa-star"></i>
@@ -156,7 +165,7 @@
 													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
 													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
 													<button class="quick-view">
-                                                    <a href="{% url 'chargerdetail' item.id %}">
+                                                    <a href="{% url 'detail' item.id %}">
                                                     <i class="fa fa-eye"></i><span class="tooltipp">quick view</span></a></button>
 												</div>
 											</div>
@@ -217,7 +226,11 @@
 											<div class="product-body">
 												<p class="product-category">Category</p>
 												<h3 class="product-name"><a href="#">{{item.name}}</a></h3>
-												<h4 class="product-price">${{item.price|floatformat:2}} <br><del class="product-old-price">${{item.original_price|floatformat:2}}</del></h4>
+												<h4 class="product-price">${{item.price|floatformat:2}} <br>
+												{% if item.original_price == None %}
+												{% else %}
+												<del class="product-old-price">${{item.original_price|floatformat:2}}</del></h4>
+												{% endif %}
 												<div class="product-rating">
 													<i class="fa fa-star"></i>
 													<i class="fa fa-star"></i>
@@ -229,7 +242,7 @@
 													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
 													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
 													<button class="quick-view">
-                                                    <a href="{% url 'batterydetail' item.id %}">
+                                                    <a href="{% url 'detail' item.id %}">
                                                     <i class="fa fa-eye"></i><span class="tooltipp">quick view</span></a></button>
 												</div>
 											</div>

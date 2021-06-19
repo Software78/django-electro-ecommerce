@@ -43,14 +43,15 @@
 			<div id="top-header">
 				<div class="container">
 					<ul class="header-links pull-left">
-						<li><a href="#"><i class="fa fa-phone"></i> +234031383693</a></li>
+						<li><a href="#"><i class="fa fa-phone"></i> +2347031383693</a></li>
 						<li><a href="#"><i class="fa fa-envelope-o"></i> technicatalyst78@gmail.com</a></li>
 						<li><a href="#"><i class="fa fa-map-marker"></i> Lagos, Nigeria</a></li>
 					</ul>
 					<ul class="header-links pull-right">
-						<li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
 
                         {% if user.is_authenticated == True %}
+
+						<li><a href="#"><i class="fa fa-dollar"></i> USD</a></li> 	 	
                         <li><a href="{% url 'logout' %}"><i class="fa fa-user-o"></i>Hello, {{request.user}}</a></li>
                         {% elif user.is_authenticated == False%}
                         <li><a href="{% url 'login' %}"><i class="fa fa-user-o"></i>Login</a></li>
@@ -76,7 +77,6 @@
 							</div>
 						</div>
 						<!-- /LOGO -->
-
 						<!-- SEARCH BAR -->
 						<div class="col-md-6">
 							<div class="header-search">

@@ -4,7 +4,7 @@
 
 
 <div id="content-container" class="container p-none">
-        <div class="lgn-container col-lg-6">
+        <div class="lgn-container col-lg-12">
             <form id="login-form" method="post" 
                   action="{% url 'login' %}">
                 {% csrf_token %}
@@ -31,12 +31,13 @@
                        class="btn btn-primary pull-right" />
                 <input type="hidden" name="next" value="{{ next }}" />
             </form>
+            <p>New user? <a href="{% url 'register' %}">Sign Up</a></p>
         </div>
 
         
     </div>
     <div class="container">
 <br>
-        <p>Already a user? <a href="{% url 'register' %}">Sign Up</a></p>
+        
 </div>
 {% endblock content %}

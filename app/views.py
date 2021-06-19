@@ -16,10 +16,6 @@ def checkout(request):
     context = {}
     return render(request,'checkout.html',context)
 
-def product(request):
-    context ={}
-    return render(request,'product.html')
-
 def blank(request):
     context = {}
     return render(request,'blank.html')
@@ -69,4 +65,5 @@ def register(request):
             return render(request, 'register.html', context)
 
 def user(request):
-    return render(request,'profile.html')
+    context = {}
+    return render(request,'profile.html',context)
